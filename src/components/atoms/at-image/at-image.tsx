@@ -1,6 +1,5 @@
 import React from "react";
-import "./at-image.css"
-
+import "./at-image.css";
 
 interface AtImageProps {
   urlAction: string;
@@ -9,18 +8,17 @@ interface AtImageProps {
   altText: string;
 }
 
-function Atimage(props: AtImageProps) {
-
-  console.log(props)
+const Atimage: React.FC<AtImageProps> = ({
+  urlAction,
+  altText,
+  media,
+  title,
+}) => {
   return (
-    <a href={props.urlAction}>
-      <img
-       alt={props.altText}
-       src={props.media}
-       title={props.title}
-       className="alt-image"/>
+    <a href={urlAction} className="flex justify-center items-center">
+      <img alt={altText} src={media} title={title} className="alt-image object-center object-contain max-w-full" />
     </a>
   );
-}
+};
 
 export default Atimage;
